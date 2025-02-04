@@ -6,12 +6,12 @@
       </filter>
     </defs>
     
-    <path fill="#e13022" d="M 0 0 L 6.496094 0 L 6.496094 36.996094 L 0 36.996094 Z M 0 0 " fill-opacity="1" fill-rule="red"  filter="url(#dropShadow)" transform="translate(34.5,32.5)" />  
-    <path fill="#e13022" d="M 30.535156 0 L 37.007812 0 L 37.007812 37.003906 L 30.535156 37.003906 Z M 30.535156 0 " fill-opacity="1" fill-rule="red" transform="translate(42.5,32.5)" />  
-    <path fill="#e13022" d="M 0 0 L 13.875 0 L 13.875 6.46875 L 0 6.46875 Z M 0 0 "  fill-opacity="1" fill-rule="red"  filter="url(#dropShadow)" transform="translate(38.5,32.5)" />  
-    <path fill="#e13022" d="M 23.128906 0 L 37.003906 0 L 37.003906 6.46875 L 23.128906 6.46875 Z M 23.128906 0 " fill-opacity="1" fill-rule="red"  filter="url(#dropShadow)" transform="translate(38.5,32.5)" />  
-    <path fill="#e13022" d="M 0 30.535156 L 13.875 30.535156 L 13.875 37.007812 L 0 37.007812 Z M 0 30.535156 " fill-opacity="1" fill-rule="red"  filter="url(#dropShadow)" transform="translate(37.5,32.5)" />  
-    <path fill="#e13022" d="M 23.128906 30.535156 L 37.003906 30.535156 L 37.003906 37.007812 L 23.128906 37.007812 Z M 23.128906 30.535156 " fill-opacity="1" fill-rule="red" transform="translate(38.5,32.5)" filter="url(#dropShadow)" /> 
+    <path fill="#836ef9" d="M 0 0 L 6.496094 0 L 6.496094 36.996094 L 0 36.996094 Z M 0 0 " fill-opacity="1" fill-rule="red"  filter="url(#dropShadow)" transform="translate(34.5,32.5)" />  
+    <path fill="#836ef9" d="M 30.535156 0 L 37.007812 0 L 37.007812 37.003906 L 30.535156 37.003906 Z M 30.535156 0 " fill-opacity="1" fill-rule="red" transform="translate(42.5,32.5)" />  
+    <path fill="#836ef9" d="M 0 0 L 13.875 0 L 13.875 6.46875 L 0 6.46875 Z M 0 0 "  fill-opacity="1" fill-rule="red"  filter="url(#dropShadow)" transform="translate(38.5,32.5)" />  
+    <path fill="#836ef9" d="M 23.128906 0 L 37.003906 0 L 37.003906 6.46875 L 23.128906 6.46875 Z M 23.128906 0 " fill-opacity="1" fill-rule="red"  filter="url(#dropShadow)" transform="translate(38.5,32.5)" />  
+    <path fill="#836ef9" d="M 0 30.535156 L 13.875 30.535156 L 13.875 37.007812 L 0 37.007812 Z M 0 30.535156 " fill-opacity="1" fill-rule="red"  filter="url(#dropShadow)" transform="translate(37.5,32.5)" />  
+    <path fill="#836ef9" d="M 23.128906 30.535156 L 37.003906 30.535156 L 37.003906 37.007812 L 23.128906 37.007812 Z M 23.128906 30.535156 " fill-opacity="1" fill-rule="red" transform="translate(38.5,32.5)" filter="url(#dropShadow)" /> 
      
 
     <g transform="translate(0 39.38461538461539)" style="transform:matrix(1, 0, 0, 1, 0, 39.3846);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:1;animation-play-state:paused;animation-delay:-7.35409s" >Z</text></g>

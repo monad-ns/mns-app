@@ -382,7 +382,7 @@ select {
 select {
     word-wrap: normal;
     width: 140px;
-    color: #e13022;
+    color: #836ef9;
     background: #fff url(../images/arrow-down.svg) no-repeat 90%;
     border: none;
     background-size: 16px;
@@ -5411,7 +5411,7 @@ progress {
     font-style: normal;
 }
 .color-red {
-    color: #e13022 !important;
+    color: #836ef9 !important;
 }
 .color-white {
     color: #fff !important;
@@ -5667,7 +5667,7 @@ li {
     transition: background-color 0.3s ease-in-out;
 }
 .dropdown-toggle:hover .tripledot em {
-    background-color: #e13022;
+    background-color: #836ef9;
 }
 .dropdown-menu {
     border: 1px solid #fff;
@@ -5786,7 +5786,7 @@ header .container-md > div a:hover,
 header .container-sm > div a:hover,
 header .container-xl > div a:hover,
 header .container-xxl > div a:hover {
-    color: #e13022 !important;
+    color: #836ef9 !important;
 }
 header .container-fluid > div nav,
 header .container-lg > div nav,
@@ -6025,7 +6025,7 @@ header .mm.active span:last-child {
     .darkTheme  nav ul li  a{color:#000 !important}
 }
 .wallet-connect:hover {
-    box-shadow: 0 1px 16px 0 #e13022;
+    box-shadow: 0 1px 16px 0 #836ef9;
 }
 .wallet-connect:hover img {
     animation-name: shake;
@@ -6086,7 +6086,7 @@ footer .footNav ul li a {
     transition: 0.3s;
 }
 footer .footNav ul li a:hover {
-    color: #e13022 !important;
+    color: #836ef9 !important;
 }
 footer .footNav ul li::before {
     position: absolute;
@@ -6138,7 +6138,7 @@ main section .banner h2 {
     margin-bottom: 35px;
 }
 main section .banner h2 span {
-    color: #e13022;
+    color: #836ef9;
     font-weight: 700;
 }
 @media (max-width: 768px) {
@@ -6199,7 +6199,7 @@ main section .banner-bg {
     text-indent: 4px;
 }
 .search-content form button {
-    background-color: #e13022;
+    background-color: #836ef9;
     color: #fff;
     width: 150px;
     font-size: 16px !important;
@@ -6207,11 +6207,11 @@ main section .banner-bg {
     height: 100%;
     border-radius: 0;
     transition: 0.3s;
-    border: 1px solid #e13022;
+    border: 1px solid #836ef9;
 }
 .search-content form button:hover {
     background-color: #fff;
-    color: #e13022;
+    color: #836ef9;
 }
 @media (max-width: 768px) {
     .search-content form button {
@@ -6327,7 +6327,7 @@ main section .banner-bg {
     border-radius: 4px;
     width: 100%;
     transition: 0.2s;
-    background: #e13022;
+    background: #836ef9;
 }
 .preloader .countdown,
 .preloader p {
@@ -6410,12 +6410,12 @@ button.green:hover {
     background-color: #fff !important;
 }
 button.red {
-    background: #e13022;
-    border-color: #e13022 !important;
+    background: #836ef9;
+    border-color: #836ef9 !important;
     color: #fff;
 }
 button.red:hover {
-    color: #e13022;
+    color: #836ef9;
     background-color: #fff;
 }
 button.save {
@@ -6431,7 +6431,7 @@ button.save:hover {
 }
 button.cancel {
     color: #fff;
-    background: #e13022;
+    background: #836ef9;
 }
 .tab-content {
     width: 100%;
@@ -6489,7 +6489,7 @@ header nav ul {
 }
 .accordion-header button {
     background-color: #fff !important;
-    color: #e13022 !important;
+    color: #836ef9 !important;
     outline-color: transparent !important;
     outline: none !important;
     border: none !important;
@@ -6508,7 +6508,7 @@ ul {
     color: #3b9844;
 }
 .color-red {
-    color: #e13022;
+    color: #836ef9;
 }
 .wrongAlert {
     transition: 0.4s;
@@ -6622,14 +6622,14 @@ ul {
 
 .nav-link.active,
 .nav-link:hover {
-    color: #e13022 !important;
+    color: #836ef9 !important;
     border: none !important;
 }
 #ethscan {
-    background-color: #e13022;
+    background-color: #836ef9;
 }
 .imgwhiteredbg {
-    background-color: #e13022;
+    background-color: #836ef9;
     display: block;
     display: flex;
     justify-content: center;
@@ -6653,8 +6653,8 @@ ul {
         color: #000;
     }
     50% {
-        color: #e13022;
-        box-shadow: 0 1px 16px 0 #e13022;
+        color: #836ef9;
+        box-shadow: 0 1px 16px 0 #836ef9;
     }
     100% {
         color: #000;
@@ -6666,7 +6666,7 @@ ul {
 .text-content h3{font-size: 28px;}
 .text-content *{color:#000;}
 .text-content p a{transition: .4s;}
-.text-content p a:hover{color:#e13022 !important;}
+.text-content p a:hover{color:#836ef9 !important;}
 .text-content p,.text-content ul li{font-family: 'Arial';font-size: 18px;}
 .text-content ul li{position: relative;padding-left: 15px;}
 .text-content ul li::before{display: block;content:"";width: 6px;height: 6px;border-radius: 50%;background-color: #fff;position: absolute;top:9px; left:0;content:"";}
@@ -6700,7 +6700,7 @@ ul {
 .customCounter button::after{display: block;width: 60%;content:"";height: 2px;background-color: #000;position: absolute;transition: .4s;}
 .customCounter button.countplus::before{display: block;height: 60%;width: 2px;background-color: #000;content:"";position: absolute;transition: .4s;}
 
-.customCounter .countminus:hover::before,.customCounter .countminus:hover{background-color: #e13022;color:#fff;border-color: #fff;}
+.customCounter .countminus:hover::before,.customCounter .countminus:hover{background-color: #836ef9;color:#fff;border-color: #fff;}
 .customCounter .countplus:hover{background: #20c997;color:#fff;border-color: #fff;}
 .customCounter button:hover::after,.customCounter button:hover::before{background-color: #fff;}
 .customCounter div{height: 30px;margin: 0 15px;display: flex;justify-content: center;align-items: center;border-radius: 4px;border:1px solid #000;padding: 7px;background-color: #fff;font-size: 20px;color:#000;}
@@ -6723,7 +6723,7 @@ button{border-width: 1px;font-family:rbtm, Arial, Helvetica, sans-serif !importa
     background: transparent;        /* color of the tracking area */
   }
   .tableContent::-webkit-scrollbar-thumb {
-    background-color: #e13022;    /* color of the scroll thumb */
+    background-color: #836ef9;    /* color of the scroll thumb */
     border-radius: 20px;       /* roundness of the scroll thumb */
     border: 3px solid transparent;  /* creates padding around scroll thumb */
   }

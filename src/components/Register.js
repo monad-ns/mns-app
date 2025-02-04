@@ -391,7 +391,7 @@ class Register extends Component {
                                                             strokeWidth={3}
                                                             isPlaying
                                                             duration={ this.state.countdown < 1 ? Number(process.env.REACT_APP_MINCOMMITMENTAGE): this.state.countdown } 
-                                                            colors={['#239e01', '#2ece02', '#e5ed07', '#e13022']}
+                                                            colors={['#239e01', '#2ece02', '#e5ed07', '#836ef9']}
                                                             colorsTime={[7, 5, 2, 0]}
                                                             onComplete={()=> this.setState({ isTimerCompleted: true })}
                                                             >
