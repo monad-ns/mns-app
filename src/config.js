@@ -6,7 +6,7 @@ import { ApolloClient, InMemoryCache } from "@apollo/client";
 export const projectId = process.env.REACT_APP_PROJECT_ID
   
 export const metadata = {
-  name: 'ZKFair Domains',
+  name: 'Monad Domains',
   description: ''
 }
 

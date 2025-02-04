@@ -3,7 +3,7 @@ import { wagmiConfig } from "../config";
 import { readContract, writeContract } from '@wagmi/core'
 import { toast } from "react-toastify";
 import React, {Component} from 'react';
-import zkfRegisterControllerABI from '../abi/ZKFRegisterController.json'
+import monRegisterControllerABI from '../abi/MONRegisterController.json'
 import { waitForTransactionReceipt } from '@wagmi/core'
 import spinner from '../assets/images/spinner.svg';
 import { Modal } from "react-bootstrap";
@@ -51,8 +51,8 @@ class RenewModal extends Component {
             console.log(this.state.price.toString())
 
             const _hash = await writeContract(wagmiConfig, {
-                abi: zkfRegisterControllerABI,
-                address: process.env.REACT_APP_ZKFREGISTERCONTROLLER,
+                abi: monRegisterControllerABI,
+                address: process.env.REACT_APP_MONREGISTERCONTROLLER,
                 functionName: "renew",
                 args: [ this.props.domain.labelName, this.getDuration() ],
                 account: this.props.owner,
@@ -101,8 +101,8 @@ class RenewModal extends Component {
             this.setState({ isFetchingPrice: true, isFetchedPrice: false });
 
             _price = await readContract(wagmiConfig, {
-                abi: zkfRegisterControllerABI,
-                address: process.env.REACT_APP_ZKFREGISTERCONTROLLER,
+                abi: monRegisterControllerABI,
+                address: process.env.REACT_APP_MONREGISTERCONTROLLER,
                 functionName: 'rentPrice',
                 args: [this.props.domain.labelName, this.getDuration()],
                 account: this.props.owner,

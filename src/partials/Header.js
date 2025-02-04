@@ -54,8 +54,8 @@ function Header() {
             <div className="container-fluid d-flex align-items-center justify-content-between">
             <NavLink to="/">
                 <h1 id="logo">
-                        <img src={Logo} alt="Zkfair Name Services" />
-                        <span>ZKFair Domains</span>
+                        <img src={Logo} alt="Monad Name Services" />
+                        <span>Monad Domains</span>
                 </h1>
             </NavLink>
             <div className="controls-content">

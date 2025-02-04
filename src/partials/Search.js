@@ -1,6 +1,6 @@
 import searchIcon from '../assets/images/search-icon.svg';
 import loadericon from '../assets/images/loader-icon.svg';
-import zkfRegisterControllerABI from '../abi/ZKFRegisterController.json'
+import monRegisterControllerABI from '../abi/MONRegisterController.json'
 import { goerli, sepolia, zkFair } from 'wagmi/chains'
 
 import { useReadContract } from 'wagmi'
@@ -32,15 +32,15 @@ function Search() {
         }
     } 
 
-    const zkfRegisterControllerConfig = {
-        address: process.env.REACT_APP_ZKFREGISTERCONTROLLER,
-        abi: zkfRegisterControllerABI
+    const monRegisterControllerConfig = {
+        address: process.env.REACT_APP_MONREGISTERCONTROLLER,
+        abi: monRegisterControllerABI
     };
 
     console.log("REACT_APP_NODE_ENV:" + process.env.REACT_APP_NODE_ENV);
 
     const { data: available, error, isPending } = useReadContract({
-        ...zkfRegisterControllerConfig,
+        ...monRegisterControllerConfig,
         functionName: 'available',
         args: [name],
         chainId: process.env.REACT_APP_NODE_ENV === "production" ? zkFair.id: sepolia.id
@@ -52,7 +52,7 @@ function Search() {
         <div className="search-content container pe-0 ps-0 mb-3"> 
             <form onSubmit={(e)=> { e.preventDefault(); return false; }}>
                 <img src={searchIcon} alt="" /><input type="text" ref={inputRef} placeholder="Search your domain name" />
-                <span className='chainText'>.zkf</span>
+                <span className='chainText'>.mon</span>
                 <button onClick={(e)=> handleSearch(e) }>{isPending ? <><img src={loadericon} /></> : "SEARCH" }</button>
             </form>
             { name != "" & !valid ?
@@ -74,12 +74,12 @@ function Search() {
                 <div className="search-result-content">
                     <ul>
                         <li className="copy-container">
-                            <span className="domainName ">{obscureName(name, 20)}.zkf </span>
+                            <span className="domainName ">{obscureName(name, 20)}.mon </span>
                             <div className='pricing'>
                                 <DomainPrice available={available} name={name} duration={yearInSeconds} />
                             </div>
                             <div className='resultbutton d-flex justify-content-end'> 
-                                <Link to={"/name/"+ name +".zkf"}>
+                                <Link to={"/name/"+ name +".mon"}>
                                     <button  className={available ? "green": "red"}>{ available ? "Available": "Not Available"}</button>
                                 </Link>
                             </div>

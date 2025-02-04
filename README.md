@@ -1,6 +1,6 @@
 
-# fns-app
-React Web Application 
+# mns-app
+Monad Dominas React Web Application 
 
 ## Install Dependencies
 to install dependencies, run the following command

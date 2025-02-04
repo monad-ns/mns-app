@@ -8,12 +8,12 @@ function AccordionBt() {
         <Accordion.Body>
             <ul className='itemlist'>
             <li className="copy-container">
-                  <span className="domainName">kamil.zkf</span>
+                  <span className="domainName">kamil.mon</span>
                   <div className="pricing"><span>Status: <em className='color-red'>Passive</em></span></div>
                   <div className="resultbutton"><button className="green">Click for Active</button></div>
               </li>
             <li className="copy-container">
-                  <span className="domainName">kamil.zkf</span>
+                  <span className="domainName">kamil.mon</span>
                   <div className="pricing"><span>Status: <em className='color-green'>Active</em></span></div>
                   <div className="resultbutton"><button className="red">Click for Passive</button></div>
               </li>

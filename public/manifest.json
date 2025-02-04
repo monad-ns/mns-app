@@ -1,6 +1,6 @@
 {
-  "short_name": "zkfair-domains",
-  "name": "ZKFair Domains (.zkf)",
+  "short_name": "monad-domains",
+  "name": "Monad Domains (.mon)",
   "icons": [
     {
       "src": "favicon.ico?v=2",

@@ -6072,7 +6072,7 @@ footer > div{
   
   
   .footNav,.footNav + div{width: 100%;}
-  .zkfsocialMedia{width: 100%;display: flex;justify-content: flex-end;padding: 12px 0;}
+  .monsocialMedia{width: 100%;display: flex;justify-content: flex-end;padding: 12px 0;}
   .footerRight button.wallet-connect{min-width: 184px;}
 }
 footer .footNav ul li {
@@ -6102,7 +6102,7 @@ footer .footNav ul li::before {
 footer .footNav ul li:first-child::before {
     display: none;
 }
-footer .zkfsocialMedia li a img {
+footer .monsocialMedia li a img {
     display: flex;
     width: 30px;
 }

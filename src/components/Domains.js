@@ -3,7 +3,7 @@ import { apolloClient, wagmiConfig } from "../config";
 import { readContract, writeContract } from '@wagmi/core'
 import { toast } from "react-toastify";
 import React, {Component} from 'react';
-import zkfRegisterControllerABI from '../abi/ZKFRegisterController.json'
+import monRegisterControllerABI from '../abi/MONRegisterController.json'
 import { waitForTransactionReceipt } from '@wagmi/core'
 import spinner from '../assets/images/spinner.svg';
 import moment from "moment";
@@ -38,8 +38,8 @@ class Domain extends Component {
             this.setState({ isAvailablePending: true });
 
             _available = await readContract(wagmiConfig, {
-                abi: zkfRegisterControllerABI,
-                address: process.env.REACT_APP_ZKFREGISTERCONTROLLER,
+                abi: monRegisterControllerABI,
+                address: process.env.REACT_APP_MONREGISTERCONTROLLER,
                 functionName: 'available',
                 args: [this.props.name],
                 account: this.props.owner,
@@ -60,7 +60,7 @@ class Domain extends Component {
     async handleQuery() {
 
         try {
-            let name = this.props.name + ".zkf";
+            let name = this.props.name + ".mon";
             const result = await apolloClient.query( {
                 query: GET_DOMAIN,
                 variables: {
@@ -113,7 +113,7 @@ class Domain extends Component {
                     <div className={this.state.available ? "alert alert-success text-center": "alert alert-danger text-center" }>
                         <h3>  
                             <>
-                                { this.state.available ? <> <b>{obscureLabel(this.props.name, 30)}.zkf</b> is available to claim 🥳 </>: <><b>{obscureLabel(this.props.name, 30)}.zkf</b> is not available to claim 🙁</>}
+                                { this.state.available ? <> <b>{obscureLabel(this.props.name, 30)}.mon</b> is available to claim 🥳 </>: <><b>{obscureLabel(this.props.name, 30)}.mon</b> is not available to claim 🙁</>}
                             </> 
                         </h3>
                     </div>

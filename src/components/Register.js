@@ -3,7 +3,7 @@ import { apolloClient, wagmiConfig } from "../config";
 import { readContract, writeContract } from '@wagmi/core'
 import { toast } from "react-toastify";
 import React, {Component} from 'react';
-import zkfRegisterControllerABI from '../abi/ZKFRegisterController.json'
+import monRegisterControllerABI from '../abi/MONRegisterController.json'
 import { waitForTransactionReceipt } from '@wagmi/core'
 import spinner from '../assets/images/spinner.svg';
 import moment from "moment";
@@ -68,8 +68,8 @@ class Register extends Component {
         try {
             
             _commitment =  await readContract(wagmiConfig, {
-                abi: zkfRegisterControllerABI,
-                address: process.env.REACT_APP_ZKFREGISTERCONTROLLER,
+                abi: monRegisterControllerABI,
+                address: process.env.REACT_APP_MONREGISTERCONTROLLER,
                 functionName: "makeCommitment",
                 args: [ this.props.name, this.props.owner, this.getDuration(), secret, this.resolver, this.data, this.reverseRecord ],
                 account: this.props.owner,
@@ -86,8 +86,8 @@ class Register extends Component {
         try {
   
             const result =  await readContract(wagmiConfig, {
-                abi: zkfRegisterControllerABI,
-                address: process.env.REACT_APP_ZKFREGISTERCONTROLLER,
+                abi: monRegisterControllerABI,
+                address: process.env.REACT_APP_MONREGISTERCONTROLLER,
                 functionName: "commitments",
                 args: [ _commitment ],
                 account: this.props.owner,
@@ -136,8 +136,8 @@ class Register extends Component {
  
         try {
             const _hash = await writeContract(wagmiConfig, {
-                abi: zkfRegisterControllerABI,
-                address: process.env.REACT_APP_ZKFREGISTERCONTROLLER,
+                abi: monRegisterControllerABI,
+                address: process.env.REACT_APP_MONREGISTERCONTROLLER,
                 functionName: "commit",
                 args: [ this.state.commitment ],
                 account: this.props.owner,
@@ -178,8 +178,8 @@ class Register extends Component {
             console.log(this.state.price.toString())
 
             const _hash = await writeContract(wagmiConfig, {
-                abi: zkfRegisterControllerABI,
-                address: process.env.REACT_APP_ZKFREGISTERCONTROLLER,
+                abi: monRegisterControllerABI,
+                address: process.env.REACT_APP_MONREGISTERCONTROLLER,
                 functionName: "register",
                 args: [ this.props.name, this.props.owner, this.getDuration(), this.state.secret, this.resolver, this.data, this.reverseRecord ],
                 account: this.props.owner,
@@ -213,8 +213,8 @@ class Register extends Component {
             this.setState({ isAvailablePending: true });
 
             _available = await readContract(wagmiConfig, {
-                abi: zkfRegisterControllerABI,
-                address: process.env.REACT_APP_ZKFREGISTERCONTROLLER,
+                abi: monRegisterControllerABI,
+                address: process.env.REACT_APP_MONREGISTERCONTROLLER,
                 functionName: 'available',
                 args: [this.props.name],
                 account: this.props.owner,
@@ -235,7 +235,7 @@ class Register extends Component {
     async handleQuery() {
 
         try {
-            let name = this.props.name + ".zkf";
+            let name = this.props.name + ".mon";
             const result = await apolloClient.query( {
                 query: GET_DOMAIN,
                 variables: {
@@ -272,8 +272,8 @@ class Register extends Component {
         try {
             this.setState({ isFetchingPrice: true });
             _price = await readContract(wagmiConfig, {
-                abi: zkfRegisterControllerABI,
-                address: process.env.REACT_APP_ZKFREGISTERCONTROLLER,
+                abi: monRegisterControllerABI,
+                address: process.env.REACT_APP_MONREGISTERCONTROLLER,
                 functionName: 'rentPrice',
                 args: [this.props.name, this.getDuration()],
                 account: this.props.owner,
@@ -426,7 +426,7 @@ class Register extends Component {
                         centered>
                             <Modal.Header>
                                 <Modal.Title id="contained-modal-title-vcenter">
-                                    <h2>You claimed <b>{obscureName(this.props.name, 50)}.zkf</b> 😎</h2>
+                                    <h2>You claimed <b>{obscureName(this.props.name, 50)}.mon</b> 😎</h2>
                                 </Modal.Title>
                             </Modal.Header>
                             <Modal.Body className="fs-4">

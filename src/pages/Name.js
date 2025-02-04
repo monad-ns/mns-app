@@ -50,7 +50,7 @@ function Search({name}) {
 
     function handleSubmit(e) {
         e.preventDefault();
-        navigate("/name/"+ _name+ ".zkf")
+        navigate("/name/"+ _name+ ".mon")
         return false;
     }
 
@@ -59,8 +59,8 @@ function Search({name}) {
             <div className="search-content  "> 
                 <form onSubmit={(e) => handleSubmit(e)}>
                     <img src={searchIcon} alt="" />
-                    <input type="text" onChange={handleOnChange} value={_name} placeholder="Search your .zkf domain" />
-                    <span className='chainText'>.zkf</span>
+                    <input type="text" onChange={handleOnChange} value={_name} placeholder="Search your .mon domain" />
+                    <span className='chainText'>.mon</span>
                     <button >SEARCH</button>
                 </form>
             </div>

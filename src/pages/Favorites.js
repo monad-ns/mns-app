@@ -7,12 +7,12 @@ const Favorites = () => {
           <h2>Favorites</h2>
           <ul className='itemlist'>
               <li className="copy-container">
-                  <span className="domainName">kamil.zkf</span>
+                  <span className="domainName">kamil.mon</span>
                   <div className="pricing"><span className="me-3">Status: <em className='color-green'>Avaible</em></span></div>
                   <div className="resultbutton"><button className="green">Claim</button></div>
               </li>
               <li className="copy-container">
-                  <span className="domainName">hayriye.zkf</span>
+                  <span className="domainName">hayriye.mon</span>
                   <div className="pricing"><span className="me-3">Status: <em className='color-red'>Not Avaible</em></span></div>
                   <div className="resultbutton"><button className="red" disabled>Claim</button></div>
               </li>

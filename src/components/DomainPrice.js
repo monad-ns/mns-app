@@ -1,4 +1,4 @@
-import zkfRegisterControllerABI from '../abi/ZKFRegisterController.json'
+import monRegisterControllerABI from '../abi/MONRegisterController.json'
 import loadericon from '../assets/images/loader-icon.svg';
 import { useReadContract } from 'wagmi'
 import { toast } from 'react-toastify'; 
@@ -7,13 +7,13 @@ import { goerli, sepolia, zkFair } from 'wagmi/chains'
 
 function DomainPrice({available, name, duration}) { 
  
-    const zkfRegisterControllerConfig = {
-        address: process.env.REACT_APP_ZKFREGISTERCONTROLLER,
-        abi: zkfRegisterControllerABI
+    const monRegisterControllerConfig = {
+        address: process.env.REACT_APP_MONREGISTERCONTROLLER,
+        abi: monRegisterControllerABI
     };
 
     const { data: price, error, isPending } = useReadContract({
-        ...zkfRegisterControllerConfig,
+        ...monRegisterControllerConfig,
         functionName: 'rentPrice',
         args: [name, duration],
         chainId: process.env.REACT_APP_NODE_ENV === "production" ? zkFair.id: sepolia.id

@@ -4,7 +4,7 @@ const Terms = () => {
   return (
     <div className="text-content  pb-5 mb-5">
         <h2>Terms</h2>
-        <p>The Zkfair Domains website located at https://zkfair.domains is a copyrighted work belonging to Zkfair Domains. Certain features of the Site may be subject to additional guidelines, terms, or rules, which will be posted on the Site in connection with such features.</p>
+        <p>The Monad Domains website located at https://monadns.com is a copyrighted work belonging to Monad Domains. Certain features of the Site may be subject to additional guidelines, terms, or rules, which will be posted on the Site in connection with such features.</p>
 
 
 <p>All such additional terms, guidelines, and rules are incorporated by reference into these Terms.</p>
@@ -106,7 +106,7 @@ Please note that, pursuant to 17 U.S.C. § 512(f), any misrepresentation of mate
 <p>Contact Information <br />
 Address: istanbul / Turkey<br />
 
-Email: <a target="_blank" href="mailto:support@zkfair.domains ">support@zkfair.domains</a></p>
+Email: <a target="_blank" href="mailto:support@monadns.com">support@monadns.com</a></p>
       </div>   
   )
 };

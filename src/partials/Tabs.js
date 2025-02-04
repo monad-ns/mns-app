@@ -9,9 +9,9 @@ function Tabs() {
                 <div className="pane" id="tab1">
                    <h2>My Domains</h2>
                    <ul className="list">
-                      <li>egeninpipisini.zkf</li>
-                      <li>ramazanyesin.zkf</li>
-                      <li>emredeizlesin.zkf</li>
+                      <li>egeninpipisini.mon</li>
+                      <li>ramazanyesin.mon</li>
+                      <li>emredeizlesin.mon</li>
                    </ul>
                 </div>
                 <div className="pane" id="tab2">Controller</div>
