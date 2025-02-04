@@ -16,7 +16,9 @@ yarn start
 ```
 
 ## How to set REACT_META_DATA_URL correctly?
+
 use the following format to set META_DATA_URL env.
-```console
+
+```shell
 REACT_APP_METADATA_URL={{META_DATA_URL}}/{{NETWORK_NAME}}/{{REGISTRAR_CONTROLLER_CONTRACT_ADDRESS}}/{{TOKEN_ID}}/image
 ```
