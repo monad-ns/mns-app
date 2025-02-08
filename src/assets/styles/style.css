@@ -6813,3 +6813,7 @@ body.darkTheme{background-color: #000 !important;}
 .darkTheme header .container-fluid > div nav ul li a,.darkTheme  header .container-lg > div nav ul li a,.darkTheme  header .container-md > div nav ul li a,.darkTheme  header .container-sm > div nav ul li a,.darkTheme  header .container-xl > div nav ul li a,.darkTheme  header .container-xxl > div nav ul li a{color:#fff;}
 .darkTheme main section > div h2,.darkTheme main section > div h3,.darkTheme main section > div h2,.darkTheme main section > div p{color:#fff}
 /*Theme Switch*/
+.btn-primary {
+    background-color: #836EF9 !important;
+    border-color: #836EF9 !important; 
+}

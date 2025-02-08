@@ -367,7 +367,7 @@ class Register extends Component {
                             </li>
                         </ul> 
                         {this.state.commitment == null || this.isFetchingPrice || this.state.isGettingBalance ? 
-                            <button className="btn btn-danger  align-self-center">
+                            <button className="btn btn-lg btn-primary  align-self-center">
                                 <img width={25} src={spinner} /> Checking...
                             </button>
                             : 
@@ -380,7 +380,7 @@ class Register extends Component {
                                     <>
                                         { !this.state.isCommitted && !this.state.isCommitmentExists ?  
                                             <> 
-                                                <button disabled={this.state.isCommiting ? "disabled": ""} className="btn btn-danger f-20 mt-3 mb-3" onClick={(e)=> this.handleCommit() }>
+                                                <button disabled={this.state.isCommiting ? "disabled": ""} className="btn btn-lg btn-primary f-20 mt-3 mb-3" onClick={(e)=> this.handleCommit() }>
                                                     {this.state.isCommiting ? <><img width={25} src={spinner} /> Waiting Transaction</>: <>Request to Register</>} 
                                                 </button>  
                                             </> : 
@@ -400,7 +400,7 @@ class Register extends Component {
                                                     : <></>
                                                 }
                                                 
-                                                <button disabled={this.state.isRegistring || !this.state.isTimerCompleted ? "disabled": ""} className="btn btn-danger align-self-center" onClick={(e)=> this.handleRegister() }>
+                                                <button disabled={this.state.isRegistring || !this.state.isTimerCompleted ? "disabled": ""} className="btn btn-lg btn-primary align-self-center" onClick={(e)=> this.handleRegister() }>
                                                     {this.state.isRegistring ? <><img width={25} src={spinner} />Waiting Transaction</>: <>REGISTER</>} 
                                                 </button>
                                             </>

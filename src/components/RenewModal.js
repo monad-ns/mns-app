@@ -212,7 +212,7 @@ class RenewModal extends Component {
                             : 
                             <>
                                 { this.state.balance < this.state.price ? 
-                                    <button disabled="disabled" className="btn btn-danger">
+                                    <button disabled="disabled" className="btn btn-lg btn-primary">
                                         Unsufficient Balance {this.state.balance}
                                     </button>
                                     :
