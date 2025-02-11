@@ -1,4 +1,4 @@
-FROM node:23.7.0 as build
+FROM node:23.7.0 AS build
 
 WORKDIR /usr/local/app
 
@@ -10,4 +10,7 @@ COPY public ./public
 
 RUN yarn build
 
-CMD [ "yarn", "start" ]
+FROM nginx:latest AS production
+COPY --from=build /usr/local/app/build /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
