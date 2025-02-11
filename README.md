@@ -31,5 +31,5 @@ docker build --target=production -t user/mns-app .
 
 ## Run Docker Image
 ```shell
-docker run -it -p 3000:3000 --env-file .env user/mns-app
+docker run -it -p 3000:80 --env-file .env user/mns-app
 ```
