@@ -8,6 +8,4 @@ RUN yarn install
 COPY src  ./src
 COPY public ./public
 
-RUN yarn build 
-
-CMD ["yarn", "start"]
+RUN yarn build

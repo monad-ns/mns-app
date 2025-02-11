@@ -54,9 +54,8 @@ class Register extends Component {
     }
 
     async makeCommitment() {
-        console.log("make function")
  
-        const random =  Math.floor(Math.random() * 1000);
+        const random =  Math.floor(Math.random() * 1000).toString();
         const secret = keccak256(ethers.toUtf8Bytes(random))
            
         let _commitment = null; 
