@@ -9,3 +9,5 @@ COPY src  ./src
 COPY public ./public
 
 RUN yarn build
+
+CMD [ "yarn", "start" ]
