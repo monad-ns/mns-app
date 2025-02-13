@@ -9,7 +9,7 @@ import Domain from '../components/Domains';
  
 const Name = () => { 
  
-    const SUPPORTED_CHAIN_ID = Number(process.env.REACT_APP_SUPPORTED_CHAIN_ID);
+    const SUPPORTED_CHAIN_ID = Number(import.meta.env.VITE_APP_SUPPORTED_CHAIN_ID);
 
     const {name} = useParams(); 
     const { address: registrar, isConnected }  = useAccount();

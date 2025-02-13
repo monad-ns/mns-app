@@ -39,11 +39,11 @@ class Domain extends Component {
 
             _available = await readContract(wagmiConfig, {
                 abi: monRegisterControllerABI,
-                address: process.env.REACT_APP_MONREGISTERCONTROLLER,
+                address: import.meta.env.VITE_APP_MONREGISTERCONTROLLER,
                 functionName: 'available',
                 args: [this.props.name],
                 account: this.props.owner,
-                chainId: process.env.REACT_APP_NODE_ENV === "production" ? zkFair.id: sepolia.id
+                chainId: import.meta.env.VITE_APP_NODE_ENV === "production" ? zkFair.id: sepolia.id
             });
 
             this.setState({ isAvailablePending: false });

@@ -52,12 +52,12 @@ class RenewModal extends Component {
 
             const _hash = await writeContract(wagmiConfig, {
                 abi: monRegisterControllerABI,
-                address: process.env.REACT_APP_MONREGISTERCONTROLLER,
+                address: import.meta.env.VITE_APP_MONREGISTERCONTROLLER,
                 functionName: "renew",
                 args: [ this.props.domain.labelName, this.getDuration() ],
                 account: this.props.owner,
                 value: this.state.price,
-                chainId: process.env.REACT_APP_NODE_ENV === "production" ? zkFair.id: sepolia.id
+                chainId: import.meta.env.VITE_APP_NODE_ENV === "production" ? zkFair.id: sepolia.id
             });
 
             toast.success("Your transaction has been sent.");
@@ -102,11 +102,11 @@ class RenewModal extends Component {
 
             _price = await readContract(wagmiConfig, {
                 abi: monRegisterControllerABI,
-                address: process.env.REACT_APP_MONREGISTERCONTROLLER,
+                address: import.meta.env.VITE_APP_MONREGISTERCONTROLLER,
                 functionName: 'rentPrice',
                 args: [this.props.domain.labelName, this.getDuration()],
                 account: this.props.owner,
-                chainId: process.env.REACT_APP_NODE_ENV === "production" ? zkFair.id: sepolia.id
+                chainId: import.meta.env.VITE_APP_NODE_ENV === "production" ? zkFair.id: sepolia.id
             });
             
             console.log(_price) 
@@ -127,7 +127,7 @@ class RenewModal extends Component {
 
             const balance = await getBalance(wagmiConfig, {
                 address: this.props.owner, 
-                chainId: process.env.REACT_APP_NODE_ENV === "production" ? zkFair.id: sepolia.id
+                chainId: import.meta.env.VITE_APP_NODE_ENV === "production" ? zkFair.id: sepolia.id
             });
 
             this.setState({ isGettingBalance : false, balance: balance.value });
@@ -196,7 +196,7 @@ class RenewModal extends Component {
                                     </small></div>
                                     <button onClick={(e)=> this.handleDurationUp(e)} className="countplus"><em></em><em></em></button>
                                 </div>
-                                {this.state.isFetchedPrice ? formatEther(  this.state.price.toString()) : "..." } {process.env.REACT_APP_NATIVE_TOKEN} + GAS Fee
+                                {this.state.isFetchedPrice ? formatEther(  this.state.price.toString()) : "..." } {import.meta.env.VITE_APP_NATIVE_TOKEN} + GAS Fee
                             </td> 
                         </tr>
                         </tbody>

@@ -26,10 +26,10 @@ REACT_APP_METADATA_URL={{META_DATA_URL}}/{{NETWORK_NAME}}/{{REGISTRAR_CONTROLLER
 
 ## Build Docker Image
 ```shell
-docker build -t user/mns-app .
+docker build -t user/mns-app --build-arg REACT_APP_PROJECT_ID="b6713ccd023958a1da397c790d050436" --build-arg REACT_APP_NODE_ENV="production" .
 ```
 
 ## Run Docker Image
 ```shell
-docker run -it -p 3000:80 --env-file .env user/mns-app
+docker run -it -p 3000:80 user/mns-app
 ```

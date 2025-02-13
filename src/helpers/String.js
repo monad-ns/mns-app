@@ -4,8 +4,8 @@ import namehash from "@ensdomains/eth-ens-namehash";
 import {validate} from "@ensdomains/ens-validation"           
 import json5 from "json5";
 
-const GRACE_PERIOD = Number(process.env.REACT_APP_GRACE_PREIOD);
-const PREMIUM_PERIOD =  Number(process.env.REACT_APP_PREMIUM_PERIOD);
+const GRACE_PERIOD = Number(import.meta.env.VITE_APP_GRACE_PREIOD);
+const PREMIUM_PERIOD =  Number(import.meta.env.VITE_APP_PREMIUM_PERIOD);
  
 export const ZERO_ADDRESS = "0x0000000000000000000000000000000000000000";
 

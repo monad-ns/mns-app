@@ -17,12 +17,12 @@ import { goerli, sepolia, zkFair } from 'wagmi/chains'
 
 class Register extends Component {
      
-    resolver = process.env.REACT_APP_PUBLICRESOLVER;
+    resolver = import.meta.env.VITE_APP_PUBLICRESOLVER;
     data =  [];
     reverseRecord = true;
 
-    minWait = process.env.REACT_APP_MINCOMMITMENTAGE; 
-    maxWait = process.env.REACT_APP_MAXCOMMITMENTAGE;
+    minWait = import.meta.env.VITE_APP_MINCOMMITMENTAGE; 
+    maxWait = import.meta.env.VITE_APP_MAXCOMMITMENTAGE;
 
     constructor(props) {
       super(props);
@@ -68,11 +68,11 @@ class Register extends Component {
             
             _commitment =  await readContract(wagmiConfig, {
                 abi: monRegisterControllerABI,
-                address: process.env.REACT_APP_MONREGISTERCONTROLLER,
+                address: import.meta.env.VITE_APP_MONREGISTERCONTROLLER,
                 functionName: "makeCommitment",
                 args: [ this.props.name, this.props.owner, this.getDuration(), secret, this.resolver, this.data, this.reverseRecord ],
                 account: this.props.owner,
-                chainId: process.env.REACT_APP_NODE_ENV === "production" ? zkFair.id: sepolia.id
+                chainId: import.meta.env.VITE_APP_NODE_ENV === "production" ? zkFair.id: sepolia.id
             });
 
             console.log("make: "+ _commitment)
@@ -86,11 +86,11 @@ class Register extends Component {
   
             const result =  await readContract(wagmiConfig, {
                 abi: monRegisterControllerABI,
-                address: process.env.REACT_APP_MONREGISTERCONTROLLER,
+                address: import.meta.env.VITE_APP_MONREGISTERCONTROLLER,
                 functionName: "commitments",
                 args: [ _commitment ],
                 account: this.props.owner,
-                chainId: process.env.REACT_APP_NODE_ENV === "production" ? zkFair.id: sepolia.id
+                chainId: import.meta.env.VITE_APP_NODE_ENV === "production" ? zkFair.id: sepolia.id
             });
  
             console.log("Result: "+ result  );
@@ -136,11 +136,11 @@ class Register extends Component {
         try {
             const _hash = await writeContract(wagmiConfig, {
                 abi: monRegisterControllerABI,
-                address: process.env.REACT_APP_MONREGISTERCONTROLLER,
+                address: import.meta.env.VITE_APP_MONREGISTERCONTROLLER,
                 functionName: "commit",
                 args: [ this.state.commitment ],
                 account: this.props.owner,
-                chainId: process.env.REACT_APP_NODE_ENV === "production" ? zkFair.id: sepolia.id
+                chainId: import.meta.env.VITE_APP_NODE_ENV === "production" ? zkFair.id: sepolia.id
             });
 
           
@@ -178,12 +178,12 @@ class Register extends Component {
 
             const _hash = await writeContract(wagmiConfig, {
                 abi: monRegisterControllerABI,
-                address: process.env.REACT_APP_MONREGISTERCONTROLLER,
+                address: import.meta.env.VITE_APP_MONREGISTERCONTROLLER,
                 functionName: "register",
                 args: [ this.props.name, this.props.owner, this.getDuration(), this.state.secret, this.resolver, this.data, this.reverseRecord ],
                 account: this.props.owner,
                 value: this.state.price,
-                chainId: process.env.REACT_APP_NODE_ENV === "production" ? zkFair.id: sepolia.id
+                chainId: import.meta.env.VITE_APP_NODE_ENV === "production" ? zkFair.id: sepolia.id
             });
 
             toast.success("Your transaction has been sent.");
@@ -213,11 +213,11 @@ class Register extends Component {
 
             _available = await readContract(wagmiConfig, {
                 abi: monRegisterControllerABI,
-                address: process.env.REACT_APP_MONREGISTERCONTROLLER,
+                address: import.meta.env.VITE_APP_MONREGISTERCONTROLLER,
                 functionName: 'available',
                 args: [this.props.name],
                 account: this.props.owner,
-                chainId: process.env.REACT_APP_NODE_ENV === "production" ? zkFair.id: sepolia.id
+                chainId: import.meta.env.VITE_APP_NODE_ENV === "production" ? zkFair.id: sepolia.id
             });
 
             this.setState({ isAvailablePending: false });
@@ -272,11 +272,11 @@ class Register extends Component {
             this.setState({ isFetchingPrice: true });
             _price = await readContract(wagmiConfig, {
                 abi: monRegisterControllerABI,
-                address: process.env.REACT_APP_MONREGISTERCONTROLLER,
+                address: import.meta.env.VITE_APP_MONREGISTERCONTROLLER,
                 functionName: 'rentPrice',
                 args: [this.props.name, this.getDuration()],
                 account: this.props.owner,
-                chainId: process.env.REACT_APP_NODE_ENV === "production" ? zkFair.id: sepolia.id
+                chainId: import.meta.env.VITE_APP_NODE_ENV === "production" ? zkFair.id: sepolia.id
             });
             
             console.log(_price)
@@ -362,7 +362,7 @@ class Register extends Component {
                                 </div>
                             </li>
                             <li className="text-center fw-bold fs-5">
-                                <span>Total: <span className="fw-bold">{formatEther(  this.state.price.toString()) } {process.env.REACT_APP_NATIVE_TOKEN} </span> + GAS Fee</span>
+                                <span>Total: <span className="fw-bold">{formatEther(  this.state.price.toString()) } {import.meta.env.VITE_APP_NATIVE_TOKEN} </span> + GAS Fee</span>
                             </li>
                         </ul> 
                         {this.state.commitment == null || this.isFetchingPrice || this.state.isGettingBalance ? 
@@ -389,7 +389,7 @@ class Register extends Component {
                                                             size={48}
                                                             strokeWidth={3}
                                                             isPlaying
-                                                            duration={ this.state.countdown < 1 ? Number(process.env.REACT_APP_MINCOMMITMENTAGE): this.state.countdown } 
+                                                            duration={ this.state.countdown < 1 ? Number(import.meta.env.VITE_APP_MINCOMMITMENTAGE): this.state.countdown } 
                                                             colors={['#239e01', '#2ece02', '#e5ed07', '#836ef9']}
                                                             colorsTime={[7, 5, 2, 0]}
                                                             onComplete={()=> this.setState({ isTimerCompleted: true })}

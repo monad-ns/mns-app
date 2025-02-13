@@ -3,7 +3,7 @@ import { mainnet, goerli, sepolia, zkFair } from 'wagmi/chains'
 import { walletConnect, injected, coinbaseWallet } from 'wagmi/connectors'
 import { ApolloClient, InMemoryCache } from "@apollo/client"; 
 
-export const projectId = process.env.REACT_APP_PROJECT_ID
+export const projectId = import.meta.env.VITE_APP_PROJECT_ID
   
 export const metadata = {
   name: 'Monad Domains',
@@ -16,7 +16,7 @@ export const wagmiConfig = createConfig({
     chains: chains,
     transports: { 
       [mainnet.id]: http(),
-      [sepolia.id]: http("https://eth-sepolia.g.alchemy.com/v2/"+ process.env.REACT_APP_ALCHEMY_KEY),
+      [sepolia.id]: http("https://eth-sepolia.g.alchemy.com/v2/"+ import.meta.env.VITE_APP_ALCHEMY_KEY),
       [zkFair.id]: http(),
     },
     connectors: [
@@ -29,6 +29,6 @@ export const wagmiConfig = createConfig({
 });
 
 export const apolloClient = new ApolloClient({
-  uri: process.env.REACT_APP_GRAPHAPI_URL,
+  uri: import.meta.env.VITE_APP_GRAPHAPI_URL,
   cache: new InMemoryCache()
 })

@@ -8,7 +8,7 @@ import { goerli, sepolia, zkFair } from 'wagmi/chains'
 function DomainPrice({available, name, duration}) { 
  
     const monRegisterControllerConfig = {
-        address: process.env.REACT_APP_MONREGISTERCONTROLLER,
+        address: import.meta.env.VITE_APP_MONREGISTERCONTROLLER,
         abi: monRegisterControllerABI
     };
 
@@ -16,7 +16,7 @@ function DomainPrice({available, name, duration}) {
         ...monRegisterControllerConfig,
         functionName: 'rentPrice',
         args: [name, duration],
-        chainId: process.env.REACT_APP_NODE_ENV === "production" ? zkFair.id: sepolia.id
+        chainId: import.meta.env.VITE_APP_NODE_ENV === "production" ? zkFair.id: sepolia.id
     });
   
     if(error) toast.error(error.message)
@@ -27,7 +27,7 @@ function DomainPrice({available, name, duration}) {
     } else {
         return ( 
             <> 
-                <span className='me-3'>{ fromWei(  price.base.toString() ).toString() } {process.env.REACT_APP_NATIVE_TOKEN} / YEAR</span>
+                <span className='me-3'>{ fromWei(  price.base.toString() ).toString() } {import.meta.env.VITE_APP_NATIVE_TOKEN} / YEAR</span>
             </>
          );
     }

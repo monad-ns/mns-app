@@ -33,7 +33,7 @@ function Search() {
     } 
 
     const monRegisterControllerConfig = {
-        address: process.env.REACT_APP_MONREGISTERCONTROLLER,
+        address: import.meta.env.VITE_APP_MONREGISTERCONTROLLER,
         abi: monRegisterControllerABI
     };
 
@@ -41,7 +41,7 @@ function Search() {
         ...monRegisterControllerConfig,
         functionName: 'available',
         args: [name],
-        chainId: process.env.REACT_APP_NODE_ENV === "production" ? zkFair.id: sepolia.id
+        chainId: import.meta.env.VITE_APP_NODE_ENV === "production" ? zkFair.id: sepolia.id
     });
  
     if(error) toast.error(error.message)

@@ -37,7 +37,7 @@ function LatestRegistered() {
                             { data.domains && data.domains.map( (domain) => (
                                 <div key={domain.id} className="p-2">
                                   <Link to={"/name/"+ domain.name } className="text-white fs-4">
-                                  <img className="w-100" src={process.env.REACT_APP_METADATA_URL + "/"+ getTokenId(domain.labelName) + "/image"} alt={domain.name} />
+                                  <img className="w-100" src={import.meta.env.VITE_APP_METADATA_URL + "/"+ getTokenId(domain.labelName) + "/image"} alt={domain.name} />
                                       {/* {obscureName(domain.name, 20)} */}
                                   </Link>
                               </div>

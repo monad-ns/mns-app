@@ -22,26 +22,26 @@ function Footer() {
                     </ul>
                 </div>
                 <div className='footerRight'>
-                    <button className="wallet-connect" onClick={() => switchChain({ chainId: Number(process.env.REACT_APP_SUPPORTED_CHAIN_ID) }) }>Add to Metamask <img src={MetaMaskLogo} alt="loading..." /></button>
+                    <button className="wallet-connect" onClick={() => switchChain({ chainId: Number(import.meta.env.VITE_APP_SUPPORTED_CHAIN_ID) }) }>Add to Metamask <img src={MetaMaskLogo} alt="loading..." /></button>
                 
                     <div className="monsocialMedia">
                         <ul className='d-flex'>
                             <li>
-                                <a href={process.env.REACT_APP_TWITTER_URL} target="_blank" rel="noreferrer">
+                                <a href={import.meta.env.VITE_APP_TWITTER_URL} target="_blank" rel="noreferrer">
                                     <img src={twittericon} alt="Tiwtter x" />
                                 </a>
                             </li>
                             <li className='ms-3 me-3'>
-                                <a href={process.env.REACT_APP_GITHUB_URL} target="_blank" rel="noreferrer">
+                                <a href={import.meta.env.VITE_APP_GITHUB_URL} target="_blank" rel="noreferrer">
                                     <img src={githubicon} alt="Github"   /></a>
                                 </li>
                             <li>
-                                <a href={process.env.REACT_APP_DISCORD_URL} target="_blank" rel="noreferrer">
+                                <a href={import.meta.env.VITE_APP_DISCORD_URL} target="_blank" rel="noreferrer">
                                     <img src={discordicon} alt="Discord" />
                                 </a>
                             </li>
                             <li className='ms-3'>
-                                <a href={process.env.REACT_APP_CONTRACT_URL} target="_blank" rel="noreferrer" className='imgwhiteredbg'>
+                                <a href={import.meta.env.VITE_APP_CONTRACT_URL} target="_blank" rel="noreferrer" className='imgwhiteredbg'>
                                     <img className='imgwhite' src={etherscann} alt="Contracts" />
                                 </a>
                             </li>

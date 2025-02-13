@@ -12,7 +12,7 @@ export default function ConnectWalletButton({props}) {
   const { switchChain } = useSwitchChain() 
   const chainId = useChainId()
 
-  const SUPPORTED_CHAIN_ID = Number(process.env.REACT_APP_SUPPORTED_CHAIN_ID);
+  const SUPPORTED_CHAIN_ID = Number(import.meta.env.VITE_APP_SUPPORTED_CHAIN_ID);
   
   if(isConnected) { 
     return (<>  { SUPPORTED_CHAIN_ID !== chainId ?
