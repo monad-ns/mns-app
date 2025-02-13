@@ -2,12 +2,8 @@ FROM node:23.7.0 AS build
 
 WORKDIR /usr/local/app
 
-COPY package.json ./
-RUN yarn install
-
-COPY src  ./src
-COPY public ./public
-COPY index.html ./
+COPY . .
+RUN npm install --legacy-peer-deps
 
 ARG VITE_APP_PROJECT_ID
 ARG VITE_APP_ALCHEMY_KEY
@@ -45,7 +41,7 @@ ENV VITE_APP_DISCORD_URL=$VITE_APP_DISCORD_URL
 ENV VITE_APP_CONTRACT_URL=$VITE_APP_CONTRACT_URL
 ENV VITE_APP_METADATA_URL=$VITE_APP_METADATA_URL
 
-RUN yarn build
+RUN npm run build
 
 FROM nginx:latest AS production
 COPY --from=build /usr/local/app/dist /usr/share/nginx/html
