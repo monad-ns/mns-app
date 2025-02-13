@@ -37,8 +37,6 @@ function Search() {
         abi: monRegisterControllerABI
     };
 
-    console.log("REACT_APP_NODE_ENV:" + process.env.REACT_APP_NODE_ENV);
-
     const { data: available, error, isPending } = useReadContract({
         ...monRegisterControllerConfig,
         functionName: 'available',
