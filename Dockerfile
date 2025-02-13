@@ -45,7 +45,7 @@ ENV REACT_APP_DISCORD_URL=$REACT_APP_DISCORD_URL
 ENV REACT_APP_CONTRACT_URL=$REACT_APP_CONTRACT_URL
 ENV REACT_APP_METADATA_URL=$REACT_APP_METADATA_URL
 
-RUN yarn global add vite && yarn build
+RUN yarn build
 
 FROM nginx:latest AS production
 COPY --from=build /usr/local/app/dist /usr/share/nginx/html
