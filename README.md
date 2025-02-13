@@ -26,7 +26,7 @@ REACT_APP_METADATA_URL={{META_DATA_URL}}/{{NETWORK_NAME}}/{{REGISTRAR_CONTROLLER
 
 ## Build Docker Image
 ```shell
-docker build --target=production -t user/mns-app .
+docker build -t user/mns-app .
 ```
 
 ## Run Docker Image
