@@ -13,7 +13,7 @@ import { GET_DOMAIN } from "../graphql/Domain";
 import { CountdownCircleTimer } from 'react-countdown-circle-timer'
 import { getDateSimple, getExpires, getLabelHash, getNameHash, getOneYearDuration, getTimeAgo, getTokenId, obscureLabel, obscureName } from "../helpers/String";
 import { getBalance } from '@wagmi/core'
-import { goerli, sepolia, zkFair } from 'wagmi/chains'
+import { sepolia } from 'wagmi/chains'
 
 class Domain extends Component {
       
@@ -43,7 +43,7 @@ class Domain extends Component {
                 functionName: 'available',
                 args: [this.props.name],
                 account: this.props.owner,
-                chainId: import.meta.env.VITE_APP_NODE_ENV === "production" ? zkFair.id: sepolia.id
+                chainId: import.meta.env.VITE_APP_NODE_ENV === "production" ? sepolia.id: sepolia.id
             });
 
             this.setState({ isAvailablePending: false });
