@@ -1,5 +1,5 @@
 import { http, createConfig } from 'wagmi'
-import { sepolia } from 'wagmi/chains'
+import { mainnet, sepolia } from 'wagmi/chains'
 import { walletConnect, injected, coinbaseWallet } from 'wagmi/connectors'
 import { ApolloClient, InMemoryCache } from "@apollo/client"; 
 
@@ -10,11 +10,12 @@ export const metadata = {
   description: ''
 }
 
-export const chains = [sepolia];
+export const chains = [mainnet, sepolia];
 
 export const wagmiConfig = createConfig({
     chains: chains,
     transports: { 
+      [mainnet.id]: http(),
       [sepolia.id]: http("https://eth-sepolia.g.alchemy.com/v2/"+ import.meta.env.VITE_APP_ALCHEMY_KEY)
     },
     connectors: [
