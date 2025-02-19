@@ -1,7 +1,7 @@
 import searchIcon from '../assets/images/search-icon.svg';
 import loadericon from '../assets/images/loader-icon.svg';
 import monRegisterControllerABI from '../abi/MONRegisterController.json'
-import { sepolia } from 'wagmi/chains'
+import { monadTestnet } from 'wagmi/chains'
 
 import { useReadContract } from 'wagmi'
 import { useRef, useState } from 'react';
@@ -41,7 +41,7 @@ function Search() {
         ...monRegisterControllerConfig,
         functionName: 'available',
         args: [name],
-        chainId: import.meta.env.VITE_APP_NODE_ENV === "production" ? sepolia.id: sepolia.id
+        chainId: import.meta.env.VITE_APP_NODE_ENV === "production" ? monadTestnet.id: monadTestnet.id
     });
  
     if(error) toast.error(error.message)

@@ -10,7 +10,7 @@ import { Modal } from "react-bootstrap";
 import {  } from "@apollo/client";
 import { getExpires, getTimeAgo, obscureName } from "../helpers/String";
 import { getBalance } from '@wagmi/core'
-import { sepolia } from 'wagmi/chains'
+import { monadTestnet } from 'wagmi/chains'
 
 class RenewModal extends Component {
 
@@ -57,7 +57,7 @@ class RenewModal extends Component {
                 args: [ this.props.domain.labelName, this.getDuration() ],
                 account: this.props.owner,
                 value: this.state.price,
-                chainId: import.meta.env.VITE_APP_NODE_ENV === "production" ? sepolia.id: sepolia.id
+                chainId: import.meta.env.VITE_APP_NODE_ENV === "production" ? monadTestnet.id: monadTestnet.id
             });
 
             toast.success("Your transaction has been sent.");
@@ -106,7 +106,7 @@ class RenewModal extends Component {
                 functionName: 'rentPrice',
                 args: [this.props.domain.labelName, this.getDuration()],
                 account: this.props.owner,
-                chainId: import.meta.env.VITE_APP_NODE_ENV === "production" ? sepolia.id: sepolia.id
+                chainId: import.meta.env.VITE_APP_NODE_ENV === "production" ? monadTestnet.id: monadTestnet.id
             });
             
             console.log(_price) 
@@ -127,7 +127,7 @@ class RenewModal extends Component {
 
             const balance = await getBalance(wagmiConfig, {
                 address: this.props.owner, 
-                chainId: import.meta.env.VITE_APP_NODE_ENV === "production" ? sepolia.id: sepolia.id
+                chainId: import.meta.env.VITE_APP_NODE_ENV === "production" ? monadTestnet.id: monadTestnet.id
             });
 
             this.setState({ isGettingBalance : false, balance: balance.value });
