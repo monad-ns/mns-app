@@ -1,5 +1,5 @@
 import { formatEther, parseEther } from "ethers";
-import { wagmiConfig } from "../config";
+import { wagmiAdapter } from "../config";
 import { readContract, writeContract } from '@wagmi/core'
 import { toast } from "react-toastify";
 import React, {Component} from 'react';
@@ -50,7 +50,7 @@ class RenewModal extends Component {
             console.log(parseEther(this.state.price.toString()))
             console.log(this.state.price.toString())
 
-            const _hash = await writeContract(wagmiConfig, {
+            const _hash = await writeContract(wagmiAdapter.wagmiConfig, {
                 abi: monRegisterControllerABI,
                 address: import.meta.env.VITE_APP_MONREGISTERCONTROLLER,
                 functionName: "renew",
@@ -62,7 +62,7 @@ class RenewModal extends Component {
 
             toast.success("Your transaction has been sent.");
 
-            const recepient = await waitForTransactionReceipt(wagmiConfig, {  hash: _hash });
+            const recepient = await waitForTransactionReceipt(wagmiAdapter.wagmiConfig, {  hash: _hash });
 
             console.log(recepient);
 
@@ -100,7 +100,7 @@ class RenewModal extends Component {
 
             this.setState({ isFetchingPrice: true, isFetchedPrice: false });
 
-            _price = await readContract(wagmiConfig, {
+            _price = await readContract(wagmiAdapter.wagmiConfig, {
                 abi: monRegisterControllerABI,
                 address: import.meta.env.VITE_APP_MONREGISTERCONTROLLER,
                 functionName: 'rentPrice',
@@ -125,7 +125,7 @@ class RenewModal extends Component {
 
             this.setState({ isGettingBalance : true });
 
-            const balance = await getBalance(wagmiConfig, {
+            const balance = await getBalance(wagmiAdapter.wagmiConfig, {
                 address: this.props.owner, 
                 chainId: import.meta.env.VITE_APP_NODE_ENV === "production" ? monadTestnet.id: monadTestnet.id
             });

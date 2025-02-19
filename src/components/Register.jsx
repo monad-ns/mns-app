@@ -1,5 +1,5 @@
 import { ethers, formatEther, keccak256, parseEther } from "ethers";
-import { apolloClient, wagmiConfig } from "../config";
+import { apolloClient, wagmiAdapter } from "../config";
 import { readContract, writeContract } from '@wagmi/core'
 import { toast } from "react-toastify";
 import React, {Component} from 'react';
@@ -66,7 +66,7 @@ class Register extends Component {
 
         try {
             
-            _commitment =  await readContract(wagmiConfig, {
+            _commitment =  await readContract(wagmiAdapter.wagmiConfig, {
                 abi: monRegisterControllerABI,
                 address: import.meta.env.VITE_APP_MONREGISTERCONTROLLER,
                 functionName: "makeCommitment",
@@ -84,7 +84,7 @@ class Register extends Component {
 
         try {
   
-            const result =  await readContract(wagmiConfig, {
+            const result =  await readContract(wagmiAdapter.wagmiConfig, {
                 abi: monRegisterControllerABI,
                 address: import.meta.env.VITE_APP_MONREGISTERCONTROLLER,
                 functionName: "commitments",
@@ -134,7 +134,8 @@ class Register extends Component {
         this.setState({ isCommiting: true, isCommitted: false  });
  
         try {
-            const _hash = await writeContract(wagmiConfig, {
+            console.log("laksjdfjdas")
+            const _hash = await writeContract(wagmiAdapter.wagmiConfig, {
                 abi: monRegisterControllerABI,
                 address: import.meta.env.VITE_APP_MONREGISTERCONTROLLER,
                 functionName: "commit",
@@ -148,7 +149,7 @@ class Register extends Component {
 
             console.log(_hash);
  
-            const recepient = await waitForTransactionReceipt(wagmiConfig, { hash: _hash });
+            const recepient = await waitForTransactionReceipt(wagmiAdapter.wagmiConfig, { hash: _hash });
 
             console.log(recepient);
 
@@ -176,7 +177,7 @@ class Register extends Component {
             console.log(parseEther(this.state.price.toString()))
             console.log(this.state.price.toString())
 
-            const _hash = await writeContract(wagmiConfig, {
+            const _hash = await writeContract(wagmiAdapter.wagmiConfig, {
                 abi: monRegisterControllerABI,
                 address: import.meta.env.VITE_APP_MONREGISTERCONTROLLER,
                 functionName: "register",
@@ -188,7 +189,7 @@ class Register extends Component {
 
             toast.success("Your transaction has been sent.");
 
-            const recepient = await waitForTransactionReceipt(wagmiConfig, {  hash: _hash });
+            const recepient = await waitForTransactionReceipt(wagmiAdapter.wagmiConfig, {  hash: _hash });
 
             console.log(recepient);
 
@@ -211,7 +212,7 @@ class Register extends Component {
 
             this.setState({ isAvailablePending: true });
 
-            _available = await readContract(wagmiConfig, {
+            _available = await readContract(wagmiAdapter.wagmiConfig, {
                 abi: monRegisterControllerABI,
                 address: import.meta.env.VITE_APP_MONREGISTERCONTROLLER,
                 functionName: 'available',
@@ -270,7 +271,7 @@ class Register extends Component {
  
         try {
             this.setState({ isFetchingPrice: true });
-            _price = await readContract(wagmiConfig, {
+            _price = await readContract(wagmiAdapter.wagmiConfig, {
                 abi: monRegisterControllerABI,
                 address: import.meta.env.VITE_APP_MONREGISTERCONTROLLER,
                 functionName: 'rentPrice',
@@ -293,7 +294,7 @@ class Register extends Component {
 
             this.setState({ isGettingBalance : true });
 
-            const balance = await getBalance(wagmiConfig, {
+            const balance = await getBalance(wagmiAdapter.wagmiConfig, {
                 address: this.props.owner, 
             });
 

@@ -1,5 +1,5 @@
 import { ethers, formatEther, keccak256, parseEther } from "ethers";
-import { apolloClient, wagmiConfig } from "../config";
+import { apolloClient, wagmiAdapter } from "../config";
 import { readContract, writeContract } from '@wagmi/core'
 import { toast } from "react-toastify";
 import React, {Component} from 'react';
@@ -37,7 +37,7 @@ class Domain extends Component {
 
             this.setState({ isAvailablePending: true });
 
-            _available = await readContract(wagmiConfig, {
+            _available = await readContract(wagmiAdapter.wagmiConfig, {
                 abi: monRegisterControllerABI,
                 address: import.meta.env.VITE_APP_MONREGISTERCONTROLLER,
                 functionName: 'available',
