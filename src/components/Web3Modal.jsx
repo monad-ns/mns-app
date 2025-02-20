@@ -1,15 +1,26 @@
 import { WagmiProvider } from 'wagmi'
-import { wagmiConfig, chains, projectId } from "../config";
-import { createWeb3Modal } from '@web3modal/wagmi/react'
+import { wagmiAdapter, chains, projectId } from "../config";
+//import { createWeb3Modal } from '@web3modal/wagmi/react'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
  
+import { createAppKit } from '@reown/appkit/react'
+
+
+
 const queryClient = new QueryClient()
  
-createWeb3Modal({ wagmiConfig, projectId, chains })
+//createWeb3Modal({ wagmiConfig, projectId, chains })
 
+
+createAppKit({
+  adapters: [wagmiAdapter],
+  networks: chains,
+  projectId: projectId
+ })
+ 
 export function Web3Modal({ children }) {
   return (
-    <WagmiProvider config={wagmiConfig}>
+    <WagmiProvider config={wagmiAdapter.wagmiConfig}>
       <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
     </WagmiProvider>
   )
