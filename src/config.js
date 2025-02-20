@@ -14,20 +14,24 @@ export const metadata = {
 
 export const chains = [monadTestnet];
 
+
+
 export const wagmiAdapter = new WagmiAdapter({
   networks: chains,
-  projectId,
+  projectId: projectId,
   transports: { 
     [monadTestnet.id]: http(NODE_PROVIDER_URL),
   },
   connectors: [
-    walletConnect({ projectId, metadata, showQrModal: true }),
+    
     injected({ shimDisconnect: true }),
     coinbaseWallet({
       appName: metadata.name
     })
   ]
 })
+
+export const config = wagmiAdapter.wagmiConfig
 
 /* 
 export const wagmiConfig = createConfig({

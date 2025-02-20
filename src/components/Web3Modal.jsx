@@ -11,16 +11,12 @@ const queryClient = new QueryClient()
  
 //createWeb3Modal({ wagmiConfig, projectId, chains })
 
+
 createAppKit({
   adapters: [wagmiAdapter],
   networks: chains,
-  projectId,
-  features: {
-    analytics: false,
-  }
+  projectId: projectId
  })
- 
- console.log(wagmiAdapter.wagmiConfig)
  
 export function Web3Modal({ children }) {
   return (
